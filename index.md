@@ -41,8 +41,8 @@ The course will be delivered in a "traditional" lecture style. Prof Wand's secti
 | 2             | Prof Bhutta                                                               | TF 9:50 am - 11:30 am                        | TBA            |
 | 3             | Prof Bhutta                                                               | T 11:45 am - 1:25 pm & R 2:50 pm - 4:30pm    | West Village H 108     |
 | 4             | Prof Wand                                                                 | W 6:00 pm - 9:20 pm                          | Online             |
-| 5             | Prof Mitra                                                                | WF 11:45 am - 1:25 pm                         | West Village H 110            |
-| 6             | Prof Mitra                                                                | TF 3:25 pm - 5:05 pm                         | West Village H 110            |
+| 5             | Prof Simmons                                                                | WF 11:45 am - 1:25 pm                         | West Village H 110            |
+| 6             | Prof Simmons                                                                | TF 3:25 pm - 5:05 pm                         | West Village H 110            |
 
 ## Course Project
 The assignments and project for this class are designed to mirror the experiences of a software engineer joining a new development team:
