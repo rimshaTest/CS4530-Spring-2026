@@ -48,6 +48,8 @@
   name: Midterm Review
 9a:
   name: Midterm Exam
+midtermRetro:
+  name: Midterm Retrospective
 9b:
   name: Principles for Cloud Deployment
   page: 
@@ -135,8 +137,8 @@ patriotsday:
   type: holiday
 teamMeetings:
   name: Team Meetings
-midtermRetro:
-  name: Midterm Retrospective
+oteamMeetings:
+  name: Team Meetings (Optional)
 noClass:
   name: No Class
 extendedOfficeHours:
