@@ -1,31 +1,35 @@
 deadlines:
   '3':
     Wed:
-      date: 2025/09/17 12:00pm 
+      date: 2026/01/21 12:00pm 
       content: ip1
   '4':
     Wed:
-      date: 2025/09/24 12:00pm 
+      date: 2026/01/28 12:00pm 
       content: tp1
+  '5':
+    Wed:
+      date: 2026/02/04 12:00pm
+      content: ip2
   '6':
     Wed:
-      date: 2025/10/08 12:00pm
+      date: 2026/02/11 12:00pm
       content: tp2
   '7':
     Wed:
-      date: 2025/10/15 12:00pm
-      content: ip2
+      date: 2026/02/18 12:00pm
+      content: ip3
   '8':
     Wed:
-      date: 2025/10/22 12:00pm
+      date: 2026/02/25 12:00pm
       content: tp3
   '13':
     Wed:
-      date: 2025/11/25 12:00pm
+      date: 2026/04/08 12:00pm
       content: tp4
   '15':
     Wed:
-      date: 2025/12/08 12:00pm
+      date: 2026/04/22 12:00pm
       content: tp5
 dates:
   firstMonday: 2026/01/05
