@@ -40,16 +40,13 @@ If you're worried about being busy around the time of a HW submission, please pl
 
 ## Activities and Attendance:
 
-Most lectures will feature interactive activities (similar to labs) and/or polls that support the material being presented. You must be present in class to participate in the activity or take the poll (participating in an activity while not attending the synchronous session will be considered academic dishonesty and will be treated harshly). In addition, attendance in the synchronous meetings ('work on project' sessions, project meetings, weekly TA meetings and project demos/presentations) is expected. Each instructor may have a different style for assigning participation grades, but historical grading information suggests that each style results in a similar overall grade distribution. Participation grades will be posted on Canvas, and will be updated regularly. 
+Most lectures will feature interactive activities (similar to labs) and/or polls that support the material being presented. You must be present in class to participate in the activity or take the poll (participating in an activity while not attending the synchronous session will be considered academic dishonesty and will be treated harshly). Attendance for any lecture or synchronous meeting that involves activities, 'work on project' sessions, project-related meetings, project demos/presentations is **required**. In addition, each instructor may have a different style for assigning participation grades, but historical grading information suggests that each style results in a similar overall grade distribution. Participation grades will be posted on Canvas, and will be updated regularly. 
 
 Sometimes you cannot avoid missing a class. If you need to be away from class, it is your responsibility to inform the instructor {as soon as possible, preferably before class} to receive credit for any participation and catch up on the materials discussed in the class. University policy on attendance can be found [here](https://catalog.northeastern.edu/undergraduate/academic-policies-procedures/attendance-requirements/). 
 
-Please note that we consider lecture days (the ones that include activities), 'work on project' sessions, and project meeting/demos/presentations days as lab days. Wellness days typically cannot be used for lab days. Please work with your instructors if you need to use one. 
+Please note that we consider lecture days (the ones that include activities), 'work on project' sessions, and project meeting/demos/presentations days as **lab days**. Wellness days typically [cannot be used](https://wellnessdays.studentlife.northeastern.edu/overview/) for lab days. Please work with your instructors if you have to miss one. 
 
 If you join class in person, you are strongly encouraged to bring your laptop or phone to class so that you can participate in the activities.
-
-## Instructor Meeting:
-All students are encouraged to meet with the instructor during office hours atleast once during the semester. The purpose of this meeting is to get to know you and to help provide any support that you may need to be successful in this course. 
 
 ## Academic Integrity
 
