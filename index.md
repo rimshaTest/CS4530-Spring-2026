@@ -38,7 +38,7 @@ The course will be delivered in a "traditional" lecture style. Prof Wand's secti
 | Section       | Instructor                                                                | Meeting Time                                 | Meeting Place      |
 |---------------|---------------------------------------------------------------------------|----------------------------------------------|--------------------|
 | 1             | Prof Bhutta                                                               | MR 11:45 am - 1:25 pm                        | West Village H 108 |
-| 2             | Prof Bhutta                                                               | TF 9:50 am - 11:30 am                        | TBA            |
+| 2             | Prof Bhutta                                                               | TF 9:50 am - 11:30 am                        | EXP 201            |
 | 3             | Prof Bhutta                                                               | T 11:45 am - 1:25 pm & R 2:50 pm - 4:30pm    | West Village H 110     |
 | 4             | Prof Wand                                                                 | W 6:00 pm - 9:20 pm                          | Online             |
 | 5             | Prof Simmons                                                                | WF 11:45 am - 1:25 pm                         | West Village H 110            |
