@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Unit Testing with Jest
+title: Unit Testing with Jest (replace by ViTest)
 permalink: /tutorials/week1-unit-testing
 parent: Tutorials
 nav_order: 4
