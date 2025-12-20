@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Requirement Engineering
+title: User Stories and Conditions of Satisfaction
 nav_exclude: true
 ---
-## Activity 1: Requirement Engineering with User Stories and Conditions of Satisfaction
+## Activity 1: User Stories and Conditions of Satisfaction
 
 ### Introduction
 
@@ -21,20 +21,22 @@ Consider a Learning Management System (like Canvas).  Choose ***one*** of the fo
 
 ### Requirements for this activity
 
-1. Identify at least 3 different roles representing different classes of users for that area.
+1. Say which area you picked.
+
+2. Identify at least 3 different roles representing different classes of users for that area.
    
-2. Choose **one** of those roles and write down at least 3 different user stories for that participant.  These should be of the form
+3. Choose **one** of those roles and write down at least 3 different user stories for that participant.  These should be of the form
    
     As a <code>&lt;role&gt;</code> I want <code>&lt;some capability&gt;</code> so that I can <code>&lt;get some benefit&gt;</code>
 
-3. For **each** user story, write 3 conditions of satisfaction with appropriate priorities. (Essential = user story is not satisfied without it)
+4. For **each** user story, write 3-4 conditions of satisfaction with appropriate priorities. (Essential = user story is not satisfied without it). There must be at least one essential condition of satisfaction and least one non-essential condition of satisfaction.
 
 Please submit a total of:
 
 * 1 area
 * 3 roles
 * 3 user stories
-* 9 conditions of satisfaction with priorities
+* 9-12 conditions of satisfaction with priorities
 
 When you are done, submit your work as required by your instructor (check the Canvas asssignment for details, if assigned). This may vary from section to section.
 
@@ -42,4 +44,4 @@ When you are done, submit your work as required by your instructor (check the Ca
 
 * 3 roles (3 pts) 
 * 3 user stories (3 pts) 
-* 9 conditions of satisfaction with appropriate priorities (4 pts)
+* 9-12 conditions of satisfaction with appropriate priorities (4 pts)
