@@ -6,7 +6,7 @@ mod1:
   page: 
 mod2:
   name: Typescript & Test Driven Development
-  page: /modules/2-requirements-to-code
+  page: /modules/2-requirements-to-tests
 mod3:
   name: Test Adequacy
   page: 

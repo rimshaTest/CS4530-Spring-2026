@@ -6,19 +6,36 @@ nav_exclude: true
 
 ## Activity: Test-Driven Development
 
-This activity is intended to supplement the CS4530 lecture on test-driven development.
-
-Start by downloading and unpacking the [starter Code]({{ site.baseurl }}{% link Activities/module-02-tdd-transcript-activity.zip %})
+This activity is intended to supplement the CS4530 lecture on test-driven development. You will need to have already completed the development environment setup for the class.
 
 ### Steps
-The slides for module 2 list a number of decisions that were made in the negotiations with the client. However, the tests in `transcriptService.test.ts` do not check all of those decisions.
+1. Download and unpack the [starter Code](https://github.com/neu-se/transcript-service/archive/refs/tags/s26-module2.zip)
+2. Run `npm install` inside the directory that is created when you unzip the download.
+3. Check that every member of the group can run 
+   
+    ```
+    npx vitest --run src/types.spec.ts
+    ```
 
-1. Review the decisions listed on the slides for this lecture, and identify at least 3 decisions that are not addressed by `transcriptService.test.ts`, or are themselves ambiguous and require further negotiation. Also identify at least two tests that are included in `transcriptService.test.ts` that make assumptions about the system that are not justified by the decisions listed on the slides.
-2. You need to write a comment above the identified test explaining what was missing, and then write a corrective test to, verify/validate for the missing issue with appropriate documentation.
-3. Run your tests in this repository, and identify which of the conditions are not satisfied by the existing code. (Your tests need not be exhaustive, and you need not attempt to fix the bugs you uncover.)
-4. Create a file named `module02.test.ts` containing the conditions you identified, the tests you wrote, and the results.
+    and see one failing and one succeeding test.
 
-When you are done, submit your work as required by your instructor (check the Canvas asssignment for details, if assigned). This may vary from section to section.
+4. Check that every member of the group can run 
+
+    ```
+    npx vitest --run src/transcript.service.spec.ts
+    ```
+
+    and see five passing tests.
+
+5. Check that every member of your group can see the ESLint error in `src/transcript.service.ts`. Discuss how to fix the error.
+
+6. Write down two testable behaviors for the `addGrade` function corresponding to the condition of satisfaction that “the user can add a new grade for an existing student.” These should be written as `it("<testable beahvior>", () => {})` in `src/transcript.service.spec.ts`. 
+
+7. Come up with at least two ways in which the `addGrade` function isn't completely specified by the conditions of satisfaction given in lecture. Document these as comments in `src/transcript.service.spec.ts`.
+
+8. Add Vitest tests to your testable behaviors in `src/transcript.service.spec.ts`. (There should be at least four new tests for `addGrade` at this point.)
+
+9. When you are done, submit the modified `src/transcript.service.spec.ts` file as required by your instructor.
 
 ### Grading Rubric:
 
@@ -28,12 +45,6 @@ There are only two non-zero grades: Satisfactory (10 points), and Minimal (5 poi
 
 To obtain a grade of Satisfactory, you must deliver all of the requirements listed in the instructions.
 
-To obtain a grade of Minimal, you must:
-* Identify at least one decision that is not addressed by the tests in transcriptService.test.ts.
-* Write a condition that resolves that decision
-* Write a Jest test  or tests to check that decision
-* Run the tests in the repository, and identify whether the repository meets the condition you have identified.
-
-Submit a file named module02.test.ts with your answers.
+To obtain a grade of Minimal, you must have at least two meaningful tests for `addGrade` in `src/transcript.service.spec.ts`.
 
 Grading will be manual; the TAs will look at your solution; they may or may not run them.
