@@ -22,13 +22,13 @@ If you run into any difficulties following any of these steps, please post (in a
 
 Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.
 
-**For this class, you will need Node.js version 22 (22.18.0 was the latest version at time of writing, although any 22.x should work in theory).**
+**For this class, you will need Node.js version 24 (v24.12.0 was the latest version at time of writing, although any 24.x or 25.x version should work in theory).**
 
 There are many ways that you can install Node.js: for instance, you can use a package manager like
 `snap` or `homebrew` to install it; you can download an installer directly from the Node.js website, and you can,
-of course, build it from source. However, due to the complexity of running different Node.js versions on the same machine, we _very strongly_ suggest using `nvm`, as explained below.
+of course, build it from source. 
 
-We recommend installing Node.js using [nvm, the node version manager](https://github.com/nvm-sh/nvm). When language runtimes
+Due to the complexity of running different Node.js versions on the same machine, we _**very strongly**_ suggest using [nvm, the node version manager](https://github.com/nvm-sh/nvm). When language runtimes
 are in active development (like Node.js is), sometimes you end up needing to have multiple versions of Node.js installed,
 and different projects that you work on might require different versions of Node.js. These annoyances are quite rare,
 but when it happens that you need to have mutliple versions of Node.js installed, it's super handy to have your system set up already
@@ -52,33 +52,33 @@ Before starting the installation, make sure to kill your Visual Studio Code if y
 6. Verify the installation, run the command `nvm version`
    - This should display the version of nvm installed.
    - ![image](./assets/week1-getting-started/node/nvmw-verification.png)
-7. Install Node.js version 22 using the command `nvm install 22`.
-8. To use this version of NodeJS, run the command `nvm use 22`.
+7. Install Node.js version 24 using the command `nvm install 24`.
+8. To use this version of NodeJS, run the command `nvm use 24`.
 
    - The output will look like:
 
-     `Now using node v22.18.0 (npm v10.9.3)`
-
-<!-- Removed step 10 because it overlaps with Verification -->
+     `Now using node v24.12.0 (npm v11.6.2)`
 
 _Troubleshooting with VSCode_: Did you follow these instructions successfully, but find a "Command not found" error when you try to run `npm` in VSCode? Try this: Close VSCode completely. Re-open it. In your command shell in VSCode, try again. We have noticed that if you have VSCode open while installing `nvm`, it is possible that VSCode will not see the new software installation until it's closed and re-opened. You can also confirm that VSCode correctly sees the NodeJS installation by running `echo %PATH%` in your windows command shell in VSCode: it should include an entry similar to `C:\Program Files\nodejs`.
 
 ## Installation Steps (Linux / Mac)
 
-1. Run either `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash` or If `wget` is installed then run `wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash`.
+This tutorial assumes you’re using the Bash or Zsh shells (if you don’t know what that means, you’re probably using one of those). 
+
+1. Run either `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash` or If `wget` is installed then run `wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash`.
    - For more details, refer to the [NVM GitHub](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating).
 2. Close and reopen the active terminal.
    > Note: You can also restart your terminal by running `source ~/.bashrc` or `source ~/.zshrc` depending on your shell.
 3. Verify nvm is working by entering `command -v nvm`. If your terminal prints
    out `nvm`, it should be working. If you see `nvm: command not found` or no
    feedback, open a new terminal and trying again or restart from step 1.
-4. Install the required version of Node.js by typing `nvm install 22`.
-5. To use this version of NodeJS, run the command `nvm use 22`.
-   > Note: If this is your first time installing Node on your system, nvm will default to using version 22.x.x on every new terminal. You can run `nvm ls` to see the list of installed Node versions on your system.
+4. Install the required version of Node.js by typing `nvm install 24`.
+5. To use this version of NodeJS, run the command `nvm use 24`.
+   > Note: If this is your first time installing Node on your system, nvm will default to using version 24.x.x on every new terminal. You can run `nvm ls` to see the list of installed Node versions on your system.
 
    - The output will look like:
 
-     `Now using node v22.18.0 (npm v10.9.3)`
+     `Now using node v24.12.0 (npm v11.6.2)`
 
 ### Installing NVM when using the fish terminal (Linux / Mac)
 
@@ -89,27 +89,24 @@ _Troubleshooting with VSCode_: Did you follow these instructions successfully, b
 1. Install nvm.fish using Fisher: `fisher install jorgebucaran/nvm.fish`
 2. Restart fish by entering `fish` in your active terminal
 3. Verify nvm is working by entering `nvm -v`
-4. Install the required version of Node.js by typing `nvm install 22`.
-
-<!-- Steps for M1 Macs and Intel Macs are the same -->
-<!-- _Working with MacOS M1 Silicon_: If you have macOS on M1 Silicon 2022, you can find instructions [here](https://benscheer.medium.com/how-to-install-nvm-and-node-on-macos-m1-silicon-in-2022-172fba82d92f). -->
+4. Install the required version of Node.js by typing `nvm install 24`.
 
 ## Verification
 
 1. Open a shell (for Linux / Mac) or windows powershell/command prompt (for Windows).
 2. Run the command `node -v`
 
-- This should print the current version of nodeJS installed (22.x.x).
+- This should print the current version of nodeJS installed (24.x.x).
 
 3. Run the command `npm -v`
 
-- This should print the current version of npm installed (v10.x.x).
+- This should print the current version of npm installed (v11.x.x).
 - ![image](./assets/week1-getting-started/node/verification.png)
 
-4. If you find that some other version is being used, run the command `nvm use 22`. For Linux / Mac, you can change the default to 22 by running the command `nvm alias default 22`.
+4. If you find that some other version is being used, run the command `nvm use 24`. For Linux / Mac, you can change the default to 24 by running the command `nvm alias default 24`.
 
 > Note: The `alias` command is not compatible with `nvm.fish`. Instead, you can
-> add a default version with the command `exec nvm use 22` in your `~/.config/fish/config.fish` file.
+> add a default version with the command `exec nvm use 24` in your `~/.config/fish/config.fish` file.
 
 # Installing Visual Studio Code (VSCode)
 
@@ -146,7 +143,7 @@ However, we can't provide such support for all IDEs.
 
 1. Download the VSCode installer from the [VSCode website](https://code.visualstudio.com/download).
 2. Open the downloaded .zip file named along the lines of `VSCode-darwin/-arm64/-universal`.
-3. Drag the extracted `Visual Studio Code` app to the `Applications` folder (found at `/Applications`).
+3. Drag the extracted `Visual Studio Code` app to the `Applications` folder (found at `/Applications`). **Do not skip this step!**
 4. Open VSCode from Launchpad or Spotlight Search.
 
 Alternatively, you can also install Visual Studio Code using `homebrew` using `brew install --cask visual-studio-code`
@@ -160,61 +157,35 @@ which will install it as a normal application in your Mac.
 2. Install VSCode by running `sudo snap install --classic code`.
 3. Open VSCode as an application on your desktop.
 
-## Connecting to your GitHub Repository
-
-If you try and clone your GitHub classroom repository and get a prompt asking for your GitHub username and password, you might not have set up your Git credentials. These are required for cloning, pulling and pushing to a private repository.
-
-### Setup for HTTPS (Git Credential Manager)
-
-[These instructions](https://github.com/git-ecosystem/git-credential-manager/blob/release/docs/install.md) help you install the Git Credential Manager on Mac/Windows/Linux
-
-After installing Git Credential Manager, no special setup is needed. The next time you use `git pull` or any other git command in reference to a private repository, it will bring up a dialog which will allow you to authenticate with your GitHub account. This is a one-time setup and you will not be required to authenticate on every action.
-
-If for some reason, HTTPS is not working well and you are getting errors like 'The 'neu-cs4530' organization has enabled or enforced SAML SSO' or 'refusing to allow an OAuth App to create or update workflow' when you try to clone/push to your repository, look below for the instructions for setting up SSH authentication.
-
-### Setup for SSH (SSH Keys)
-
-To connect to GitHub with SSH, follow the links below one by one. All links contain guides for Windows/Mac/Linux
-
-1. [Checking for existing SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys)
-
-2. [Generating a new SSH key and adding it to the ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
-
-3. [Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
-
-4. [Testing your SSH connection](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection)
-
-5. [Working with SSH Key Passphrases (Optional)](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/working-with-ssh-key-passphrases)
-
-## Additional Extensions (Optional)
+## Additional Extensions
 
 VSCode comes with a rich set of extensions to aid in software development.
-Below is a list of extensions that you may find useful.
+Below is a list of extensions we strongly recommend.
 
-1. GitLens - Git Supercharged
-2. Prettier - code formatter
-3. vscode-icons
-4. ESLint
-5. Andromeda (Color theme: Andromeda Colorizer)
-6. Jest Runner (highly recommended)
-7. GitHub Copilot and GitHub Copilot Chat
+1. [Prettier](https://marketplace.visualstudio.com/items/?itemName=esbenp.prettier-vscode) - code formatter
+2. [ESLint](https://marketplace.visualstudio.com/items/?itemName=dbaeumer.vscode-eslint)
 
-![image](./assets/week1-getting-started/vsc/useful-extensions.JPG)
+To install an extension:
 
-## Installing Extensions (eg. ESLint)
-
-1. Click on the extensions tab on the left in VSCode.
-2. Search ESLint.
+1. Click on the extensions tab on the left in VSCode (it looks like a pile of boxes, as shown here)
+   - ![image](./assets/week1-getting-started/vsc/useful-extensions.JPG)
+2. Search for the extension (e.g. "ESLint") 
 3. Click on Install.
 4. Done!
    - ![image](./assets/week1-getting-started/vsc/eslint-search.JPG)
 
 ## Additional Settings (Optional)
 
-You may find it useful to add some settings:
+If you click through the menu to Code > Settings > Settings, you should see a screen like this:
 
-1. Turn on "bracket pair colorization" (in File > Preferences > Settings)
-2. Add a keybinding for formatting the current selection (in File > Preferences > Keyboard Shortcuts > Format Selection )
+![image](./assets/week1-getting-started/vsc/settings.png)
+
+The following settings are recommended:
+
+1. “Files: Auto Save” — set to “afterDelay”
+2. “Editor: Format On Save” - enable
+3. “Prettier: Document Selectors” - add *.ts and *.tsx
+4. “Editor > Bracket Pair Colorization” — enable
 
 # Getting Started With Typescript
 
@@ -225,8 +196,6 @@ Typescript is a superscript of JavaScript which adds type information and other 
 - NodeJS
 - VSCode (recommended but not required)
 
-<!-- Remove the old instruction for installing Typescript globally and use Professor Wand's version of Hello World with local installation -->
-
 ## Hello World
 
 1. Create a new directory and open it with VSCode.
@@ -234,28 +203,27 @@ Typescript is a superscript of JavaScript which adds type information and other 
    - You can do this from within VSC by typing ctrl + `N`, but this is not necessary.
 3. Add the following code to the file:
 
-```
-  console.log('Hello, World!');
-```
+   ```
+   let message = "Hello, World!";
+   console.log(message);
+   message = "Goodbye, World!";
+   console.log(message);
+   ```
 
 4. Open the terminal with ctrl + `~` or ctrl + '`' (ctrl-backtick)
 
-- Ensure that you are in the same directory as `hello-world.ts`.
+   - Ensure that you are in the same directory as `hello-world.ts`.
 
-5. Install typescript by running the command `npm install --save typescript` .
+5. Run the command `node hello-world.ts`.
 
-- This will install Typescript locally in the current directory.
+   - This will give the result below.
+   - ![image](./assets/week1-getting-started/ts/run1.png)
 
-6. Initialize a tsconfig.json file by running the command `npx tsc --init` .
+6. Modify your file to produce a type error by trying to write a `number` to the variable `message` that has type `string`:
 
-- This generates a tsconfig.json file with default TypeScript compiler options, which you can customize later if needed.
+   - observe the message that you get.
+   - ![image](./assets/week1-getting-started/ts/run1.png)
 
-7. Run the command `npx ts-node hello-world.ts`.
-
-- If you are prompted, enter `y`.
-- This will give the result below.
-- ![image](./assets/week1-getting-started/ts/result.png)
-
-<!-- Add troubleshooting here because I ran into this problem here -->
+7. Run the command `node hello-world.ts`. What happens?
 
 _Troubleshooting with VSCode_: Did you follow these instructions successfully, but find a "Command not found" error when you try to run `npm` in VSCode? Try this: Close VSCode completely. Re-open it. In your command shell in VSCode, try again. We have noticed that if you have VSCode open while installing `nvm`, it is possible that VSCode will not see the new software installation until it's closed and re-opened. You can also confirm that VSCode correctly sees the NodeJS installation by running `echo %PATH%` in your windows command shell in VSCode: it should include an entry similar to `C:\Program Files\nodejs`.
