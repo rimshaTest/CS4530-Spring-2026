@@ -26,7 +26,7 @@ Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.
 
 There are many ways that you can install Node.js: for instance, you can use a package manager like
 `snap` or `homebrew` to install it; you can download an installer directly from the Node.js website, and you can,
-of course, build it from source. 
+of course, build it from source.
 
 Due to the complexity of running different Node.js versions on the same machine, we _**very strongly**_ suggest using [nvm, the node version manager](https://github.com/nvm-sh/nvm). When language runtimes
 are in active development (like Node.js is), sometimes you end up needing to have multiple versions of Node.js installed,
@@ -63,7 +63,7 @@ _Troubleshooting with VSCode_: Did you follow these instructions successfully, b
 
 ## Installation Steps (Linux / Mac)
 
-This tutorial assumes you’re using the Bash or Zsh shells (if you don’t know what that means, you’re probably using one of those). 
+This tutorial assumes you’re using the Bash or Zsh shells (if you don’t know what that means, you’re probably using one of those).
 
 1. Run either `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash` or If `wget` is installed then run `wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash`.
    - For more details, refer to the [NVM GitHub](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating).
@@ -74,6 +74,7 @@ This tutorial assumes you’re using the Bash or Zsh shells (if you don’t know
    feedback, open a new terminal and trying again or restart from step 1.
 4. Install the required version of Node.js by typing `nvm install 24`.
 5. To use this version of NodeJS, run the command `nvm use 24`.
+
    > Note: If this is your first time installing Node on your system, nvm will default to using version 24.x.x on every new terminal. You can run `nvm ls` to see the list of installed Node versions on your system.
 
    - The output will look like:
@@ -169,14 +170,18 @@ To install an extension:
 
 1. Click on the extensions tab on the left in VSCode (it looks like a pile of boxes, as shown here)
    - ![image](./assets/week1-getting-started/vsc/useful-extensions.JPG)
-2. Search for the extension (e.g. "ESLint") 
+2. Search for the extension (e.g. "ESLint")
 3. Click on Install.
 4. Done!
    - ![image](./assets/week1-getting-started/vsc/eslint-search.JPG)
 
 ## Additional Settings (Optional)
 
-If you click through the menu to Code > Settings > Settings, you should see a screen like this:
+If you click through enough "Settings" menus, like this on a Mac (File > Preferences > Settings on Windows):
+
+![image](./assets/week1-getting-started/vsc/settingsmenu.png)
+
+You should see a screen like this:
 
 ![image](./assets/week1-getting-started/vsc/settings.png)
 
@@ -184,8 +189,8 @@ The following settings are recommended:
 
 1. “Files: Auto Save” — set to “afterDelay”
 2. “Editor: Format On Save” - enable
-3. “Prettier: Document Selectors” - add *.ts and *.tsx
-4. “Editor > Bracket Pair Colorization” — enable
+3. “Prettier: Document Selectors” - add _.ts and _.tsx
+4. “Editor: Bracket Pair Colorization” — enable
 
 # Getting Started With Typescript
 
