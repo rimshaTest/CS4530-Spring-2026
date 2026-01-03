@@ -939,42 +939,6 @@ interface IMyInterface<T> {
 ``` 
     
 
-## Modules
-
-A Module in TypeScript is defined by using the 'import' or 'export' keywords within a file. Variables declared in a module are scoped locally and are not added to the global scope.
-
-*   **export** makes the variables and functions from a file visible outside it.
-*   **import** allows us to use variables and functions exported by another file.
-
-Examples:
-```ts
-// file1.ts
-
-export const someVar: string = 'Variables can be exported too.';
-
-export default function add(x: number, y: number): number {
-    return x + y;
-}
-
-export function subtract(x: number, y: number): number {
-    return x - y;
-}
-
-function multiply(): void {
-    throw new Error();
-}
-
-
-// file2.ts
-import add from './file1'; // curly braces are not required if export default is used.
-// There can be only 1 export default in a file. Use it if file has only 1 export.
-import { subtract } from './file1';
-
-add(1, 2);
-subtract(2, 1);
-
-// multiply cannot be imported.
-``` 
 ## Object oriented programming concepts using TypeScript  
 
 Object Oriented Programming or OOP is a programming paradigm that has four principles which are:
