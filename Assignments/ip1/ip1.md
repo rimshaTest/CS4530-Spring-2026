@@ -22,11 +22,11 @@ The objectives of this assignment are to:
 
 ## 1. Getting Started
 
-If you were registered for the class before Monday, January 5, you should have an email from a TA with an invitation to our organization. Check your spam/junk folder and accept the invitation if you don't have it. If you cannot find the invitation, if you registered for the class late, or have any other issue that keeps you from getting started, please create a Piazza post to contact us and we will try to help.
+If you were registered for the class before Wednesday, January 7, you should have an email from a TA with an invitation to our organization. Be sure to check your spam/junk folder. The first step is to accept the invitation. If you cannot find the invitation, if you registered for the class late, or have any other issue that keeps you from getting started, please create a Piazza post to contact us and we will try to help.
 
 After that, accept our [GitHub Classroom Invitation](https://classroom.github.com/a/VujpmhQc) for this assignment. It will create a Github repository for you which will include the starter code for this assignment.
 
-If you are new to Git, you may want to work on "Learning Basics of Git" [assignment](https://classroom.github.com/a/A3Pdkxmq) first!
+If you are new to Git, you may want to work on "Learning Basics of Git" [assignment](https://classroom.github.com/a/A3Pdkxmq) first! We expect all students to be able to use add/commit/push for their work.
 
 ### 1.1. Prerequisites
 
@@ -76,7 +76,7 @@ HTTP GET requests are supposed to just look up information. It is considered bad
 
 #### HTTP POST Requests
 
-A HTTP POST request, on the other hand, sends information to a server and receives information in return; it may change things about the state of the world. You can make POST requests with a tool like [Postman]({{site.baseurl}}{% link tutorials/week1-api-requests-postman.md %}) or from the command line with a tool like cURL. If you run this cURL command on while the server is running, it will make a new post that you can see if you go to the website’s frontend.
+A HTTP POST request, on the other hand, sends information to a server and receives information in return; it may change things about the state of the world. You can make POST requests with a tool like [Postman]({{site.baseurl}}{% link tutorials/week1-api-requests-postman.md %}) or from the command line with a tool like cURL. If you run this cURL command while the server is running, it will make a new post that you can see if you go to the website’s frontend.
 
 ```
 curl --location 'localhost:8000/api/thread/create' \
@@ -132,7 +132,7 @@ Unit tests for the server are in `server/tests/**/*.spec.ts`. These are written 
 
 You can test the server by going to the `server` directory and running `npm run test`. It can be very helpful to have tests constantly re-running whenever you edit code, which you can do by running `npm run vitest`.
 
-## 2. Recommendations when working on the project
+## 2. Recommendations When Working on the Project
 
 1. Open the client application in a browser and interact with it. While interacting, monitor the application tab in the browser’s developer tools. The application tab will give you information about the HTTP requests the client sends to the server. The HTTP requests will contain URIs in their headers. You can use this information to understand the endpoints in the server.
 2. Make sure VS Code is set up as described in the development environment tutorial, with ESLint, Typescript, and Prettier installed. Our ESLint setup encodes very specific style rules, and if you do not have VSCode lint feedback enabled you will have to deal with an avalanche of errors when you first lint your code.
@@ -140,7 +140,7 @@ You can test the server by going to the `server` directory and running `npm run 
 4. Follow the [debugging policy]({{ site.baseurl }}{% link debugging.md %}) to help in the debugging process.
 5. Frequently add and commit changes with git. This saves your changes and makes it easy to go back to a state where most tasks were complete. 
 
-## 3. Handing in the project
+## 3. Project Submission
 
 We will grade your code on GitHub by using the "Feedback" PR that is automatically created when the assignment is. Grades will be assigned on Gradescope.
 
