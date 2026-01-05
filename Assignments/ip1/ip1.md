@@ -142,12 +142,20 @@ You can test the server by going to the `server` directory and running `npm run 
 
 ## 3. Project Submission
 
-We will grade your code on GitHub by using the "Feedback" PR that is automatically created when the assignment is. Grades will be assigned on Gradescope.
+You will submit your code by pushing the final version into your repository (add/commit/push). Be sure to check if the correct version is submitted before the deadline.
 
 On Gradescope, you will submit a plain `.txt` file containing two things:
 
  1. The link to your project's GitHub repo (e.g. `https://github.com/neu-cs4530/ip1-robsimmons`)
  2. The written responses and cURL commands requested in Task 3.
+
+We will grade your code on GitHub by using the "Feedback" PR that is automatically created when the assignment is. The Feedback PR can be found under the "Pull requests" menu, like this:
+
+![image]({{site.baseurl}}{% link /Assignments/ip1/github-pr.png %})
+
+If you don't see your Feedback PR for the assignment, let us know on Piazza (be sure include your GitHub username).
+
+Grades will be assigned on Gradescope and synced to the Canvas Gradebook.
 
 ### TypeScript ESLint, Vitest, and Configuration Files
 
