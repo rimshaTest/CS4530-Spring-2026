@@ -8,7 +8,7 @@ due_date: "Wednesday January 21, 2026 11:00am (EST)"
 submission_notes: Submit Code through Github Classroom, Submit Link and Written Work on Gradescope
 ---
 
-The individual and group projects for this course place you in the role of the most recent hire at GameNite, an interactive application for people who like playing, or commenting on, multiplayer strategy games. It recently received a large investment thanks due to its elevator pitch, “what if we had a version of Twitch, but for correspondence chess?”
+The individual and group projects for this course place you in the role of the most recent hire at GameNite, an interactive application for people who like playing, or commenting on, multiplayer strategy games. It recently received a large investment thanks to its elevator pitch, “what if we had a version of Twitch, but for correspondence chess?”
 
 GameNite is a web application that consists of some code that runs in each client's web browser, and also code that runs on a server. By the end of the semester, you’ll propose, design, implement, and test new features for our project. We understand that some of you may have some web development experience, but don’t expect that most of you do, the goal of this first project is to get you up to speed with our existing codebase and development environment.
 
@@ -24,7 +24,7 @@ The objectives of this assignment are to:
 
 If you were registered for the class before Monday, January 5, you should have an email from a TA with an invitation to our organization. Check your spam/junk folder and accept the invitation if you don't have it. If you cannot find the invitation, if you registered for the class late, or have any other issue that keeps you from getting started, please create a Piazza post to contact us and we will try to help.
 
-After that accept our [GitHub Classroom Invitation for this assignment](https://classroom.github.com/a/VujpmhQc). It will create a Github repository for you which will include the starter code for this assignment.
+After that, accept our [GitHub Classroom Invitation](https://classroom.github.com/a/VujpmhQc) for this assignment. It will create a Github repository for you which will include the starter code for this assignment.
 
 If you are new to Git, you may want to work on "Learning Basics of Git" [assignment](https://classroom.github.com/a/A3Pdkxmq) first!
 
@@ -55,7 +55,7 @@ After that, follow the following steps:
 
 4. **Leave `npm run dev` running in the `./server` directory for the next step.**
 
-5. Open a new terminal window and start [Vite](https://vite.dev/), which builds the frontend client:
+5. Open a new terminal window and start [Vite](https://vite.dev/), and start the Vite development server using the following commands:
 
    ```
    ip1-me $> cd client
@@ -66,17 +66,17 @@ After that, follow the following steps:
 
 ### 1.2. Understanding "The Server"
 
-The code in the server directory is all TypeScript that is intended to be run on a web server. It’s built on top of [express](https://expressjs.com/), a library used to create programs that accept and respond to HTTP requests. Express can do a lot of things, but we’re only going using it to send and receive chunks of JSON-formatted data (line 19 of `server/src/app.ts` tells the Express library to behave that way).
+The code in the server directory is all TypeScript that is intended to be run on a web server. It’s built on top of [express](https://expressjs.com/), a library used to create programs that accept and respond to HTTP requests. Express can do a lot of things, but we’re only using it to send and receive chunks of JSON-formatted data (line 19 of `server/src/app.ts` tells the Express library to behave that way).
 
 #### HTTP GET Requests
 
 Your web browser makes one kind of HTTP request, a GET request, whenever you type in a URL and hit ENTER. If you go to <http://localhost:8000/api/thread/list> while the server is running, you will see a bunch of JSON-formatted data. Line 37 of `server/src/app.ts` causes the request to that URL to be sent to the `getList` controller, which is just a function that is defined in `server/src/controllers/thread.controller.ts`.
 
-HTTP GET requests are supposed to just look up information. It is considered bad behavior if a HTTP GET requests changes something about the world. In the context of GameNite, a HTTP GET request shouldn’t add a new comment, or create a new post, or initialize a new game.
+HTTP GET requests are supposed to just look up information. It is considered bad behavior if a HTTP GET requests changes anything about the state of the world. (Creating a new account on a website, updating a password, sending a chat message, and or deleting a Google doc are all examples of changes to the state of the world; HTTP GET shouldn't be able to trigger any of these changes.) In the context of GameNite, a HTTP GET request shouldn’t add a new comment, or create a new post, or initialize a new game.
 
 #### HTTP POST Requests
 
-A HTTP POST request, on the other hand, sends information to a server and receives information in return; it may change things about the state of the world. If you run this cURL command on while the server is running, it will make a new post that you can see if you go to the website’s frontend.
+A HTTP POST request, on the other hand, sends information to a server and receives information in return; it may change things about the state of the world. You can make POST requests with a tool like [Postman]({{site.baseurl}}{% link tutorials/week1-api-requests-postman.md %}) or from the command line with a tool like cURL. If you run this cURL command on while the server is running, it will make a new post that you can see if you go to the website’s frontend.
 
 ```
 curl --location 'localhost:8000/api/thread/create' \
@@ -95,17 +95,17 @@ curl --location 'localhost:8000/api/thread/create' \
 
 Line 36 of `server/src/app.ts` causes this request to be sent to the `postCreate` controller, which is also just a function defined in `server/src/controllers/thread.controller.ts`.
 
-You may find that it’s easier to make HTTP POST requests from a tool like Postman: see our Postman tutorial (XXX TODO link) for details. If you click the `</>` icon while developing a request, you can pick “cURL” from the dropdown menu and get a command-line snippet that performs the same request.
+You may find that it’s easier to make HTTP POST requests from a tool like [Postman]({{site.baseurl}}{% link tutorials/week1-api-requests-postman.md %}) instead of writing `curl` commands directly. If you click the `</>` icon in Postman while developing a request, you can pick “cURL” from the dropdown menu and get a command-line snippet that performs the same request.
 
 #### Other HTTP Requests
 
-There is a whole vocabulary of HTTP requests, but you the most important two for this class are GET and POST.
+There is a whole vocabulary of HTTP requests, but the most important two for this class are GET and POST. There's a whole [vocabulary of HTTP requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods) that you can learn more about.
 
 ### 1.3. Understanding "The Client"
 
-The code in the `client` directory is mostly TypeScript that is intended to be run in a web browser. But web browsers don’t know how to run TypeScript, they only know how to run JavaScript. While you’re working on a project, it’s important to be able to be able to look at what your code is doing in a web browser, and when you’re done working on your project, all your code needs to be turned into a form that can get shipped to a web browser.
+The code in the `client` directory is mostly TypeScript that is intended to be run in a web browser. But web browsers don’t know how to run TypeScript, they only know how to run JavaScript. While you’re working on a project, it’s important to be able to look at what your code is doing in a web browser, and when you’re done working on your project, all your code needs to be turned into a form that can get shipped to a web browser.
 
-Strategy.town uses [Vite](https://vite.dev/) for this. Vite is a _build tool_ — you use to preview the website you’re building, and you use it to build the final website that you ship to users.
+GameNite uses [Vite](https://vite.dev/) for this. Vite is a _build tool_ — you use to preview the website you’re building, and you use it to build the final website that you ship to users.
 
 ### 1.4. Shared Code
 
@@ -130,14 +130,15 @@ The client can use the `WithAuth<CreateThreadMessage>` type to ensure that it is
 
 Unit tests for the server are in `server/tests/**/*.spec.ts`. These are written in [Vitest](https://vitest.dev/), a tool discussed in one of the first two lectures. (If you’ve used Jest, you should be good to go: Vitest is designed to be very similar.)
 
-You can test the server by going to the `server` directory and running `npm run test`. It can be very helpful to have tests constantly rerunning whenever you edit code, which you can do by running `npm run vitest`.
+You can test the server by going to the `server` directory and running `npm run test`. It can be very helpful to have tests constantly re-running whenever you edit code, which you can do by running `npm run vitest`.
 
 ## 2. Recommendations when working on the project
 
 1. Open the client application in a browser and interact with it. While interacting, monitor the application tab in the browser’s developer tools. The application tab will give you information about the HTTP requests the client sends to the server. The HTTP requests will contain URIs in their headers. You can use this information to understand the endpoints in the server.
-2. Make sure VS Code is set up as described in the development environment tutorial, with ESLint, Typescript, and Prettier installed. Our ESLint setup encodes very specific style rules, and if you do not have VSCode lint feedback enabled you will have to deal with an avalance of errors when you first lint your code.
-3. Do not wait until the last minute to run npm run lint and npm run build to check for linter and typescript errors!
-4. Follow the debugging policy to help in the debugging process.
+2. Make sure VS Code is set up as described in the development environment tutorial, with ESLint, Typescript, and Prettier installed. Our ESLint setup encodes very specific style rules, and if you do not have VSCode lint feedback enabled you will have to deal with an avalanche of errors when you first lint your code.
+3. Do not wait until the last minute to run `npm run lint` and `npm run build` to check for linter and typescript errors!
+4. Follow the [debugging policy]({{ site.baseurl }}{% link debugging.md %}) to help in the debugging process.
+5. Frequently add and commit changes with git. This saves your changes and makes it easy to go back to a state where most tasks were complete. 
 
 ## 3. Handing in the project
 
@@ -150,17 +151,17 @@ On Gradescope, you will submit a plain `.txt` file containing two things:
 
 ### TypeScript ESLint, Vitest, and Configuration Files
 
-The GitHub project contains a number of configuration files you **may not modify**: `package.json`, `package-lock.json`, `.prettierrc`, `tsconfig.json`, `vitest.config.mjs`, and `vite.config.mjs` are configuration files, as is everything in the `.github` directory. If you change any of these files, take care to change them back; the list of changes in the feedback PR should not show any changes to these files. You also may not include use `eslint-disable` commands to disable ESLint's checks in your final submission.
+The GitHub project contains a number of configuration files you **may not modify**: `package.json`, `package-lock.json`, `.prettierrc`, `tsconfig.json`, `vitest.config.mjs`, and `vite.config.mjs` are configuration files, as is everything in the `.github` directory. If you change any of these files, take care to change them back; the list of changes in the feedback PR should not show any changes to these files. You also may not include `eslint-disable` commands to disable ESLint's checks in your final submission.
 
 The code you submit must pass GitHub's automatic checks, which mostly just amount to the TypeScript typechecker, the ESLint linter, and the tests. You can run these yourself like this:
 
 ```
-ip1-me $> npm run check –workspaces
-ip1-me $> npm run lint –workspaces
-ip1-me $> npm run test –workspaces
+ip1-me $> npm run check --workspaces
+ip1-me $> npm run lint --workspaces
+ip1-me $> npm run test --workspaces
 ```
 
-When you push your code to GitHub, you can see the status icon for your most recent submission. It's initally a yellow circle, like this:
+When you push your code to GitHub, you can see the status icon for your most recent submission. It's initially a yellow circle, like this:
 
 ![image]({{site.baseurl}}{% link /Assignments/ip1/github-ci.png %})
 
@@ -170,7 +171,7 @@ The Actions tab on GitHub has the results of previous runs.
 
 ![image]({{site.baseurl}}{% link /Assignments/ip1/ActionsTab.png %})
 
-**Up to 25% of your grade may be deducted for CI failures, and in severe cases we may decline to grade your assignment entirely. Give yourself sufficient time to find and fix any errors.**
+**Up to 25% of your total grade on the assignment may be deducted for CI failures (5% for prettier failures, 10% for TypeScript failures, and 10% for ESLint failures). In severe cases we may decline to grade your assignment entirely. Give yourself sufficient time to find and fix any errors.** ESLint _warnings_ do not cause CI to fail will not automatically lead to a deduction, but it is bad practice to have lots of console statements in your code, and this can lead to a point deduction if it makes it hard for a TA to understand your code.
 
 ## 4. Implementation Tasks
 
@@ -184,11 +185,25 @@ Places to look for guidance:
  - The types of Tic-Tac-Toe in `shared/src/games/ticTacToe.ts`, explain in detail how the game is intended to work.
  - The implementations of Nim and Guessing Game in the directory `server/src/games`, which may be a helpful basis for comparison.
 
+This task is worth 25 points: 
+ - 15 points will be assigned automatically based on passing our test suite
+ - 10 points will be assigned by TAs manually checking for issues with [code style]({{ site.baseurl }}{% link style.md %}). Take care to document any helper functions you include.
+
 ### Task 2: Tests for Tic-Tac-Toe
 
 The purpose of this part of the assignment is to get used to writing Vitest tests. *(Copilot-esque LLM autocompletion is quite good at writing tests, and you'll have a chance to try this out later in the class. If you have Copilot-style autocompletion enabled, you are violating the course's academic integrity policy and risking a failing grade, and in addition, this task will be exceptionally pointless and boring.)*
 
-Write tests for Tic-Tac-Toe in a new file, `server/tests/games/ticTacToe.spec.ts`. Your tests should achieve full branch coverage: when you run `npm run test` in the `server` directory, Vitest should report no "Uncovered Line #s" in `src/games/ticTacToe.ts`. Make sure to look at the tests for Nim and Guessing Game, they will provide an excellent guide.
+Write tests for Tic-Tac-Toe in a new file, `server/tests/games/ticTacToe.spec.ts`. Your tests should achieve full branch coverage on your own implementation of Tic Tac Toe: when you run `npm run test` in the `server` directory, Vitest should report no "Uncovered Line #s" in `src/games/ticTacToe.ts`. (You can also open the `index.html` file in the `coverage` folder that `vitest` creates when you run `npm run test`, which provides an easily readable coverage report.) There are other parts of the application that don't have full coverage, but you only need to worry about coverage of the `ticTacToe.ts` implementation.
+
+Make sure to look at the tests for Nim and Guessing Game, they will provide an excellent guide.
+
+This task is worth 20 points:
+ - 5 points for having tests that reasonably test each of the main functions you have implemented 
+ - 5 points for following the format and style of the Nim and Guessing Game tests
+ - 6 points for achieving full branch coverage for `ticTacToe.ts` (3 points for 90%+ branch coverage)
+ - 4 points for your tests working against some of our custom "mutants" — your tests should not be overspecified (they should pass valid implementations of `ticTacToe.ts` that may be slightly different than your own), and they should correctly catch and fail implementations of Tic Tac Toe that have bugs.
+
+Watch out on Piazza — we will try to set up an autograder that optionally lets you test your tests against our mutants Tic Tac Toe implementations closer to the assignment deadline. We'll also allow you to test your own Tic Tac Toe implementations, and reserve the right to give bonus points to anyone who can show a valid Tic Tac Toe implementation that fails our tests.
 
 ### Task 3: Exposing Errors in the User Service
 
@@ -198,11 +213,13 @@ The first and most glaring is that some of the functions, despite claiming to re
 
  1. Investigate the five User REST API endpoints listed in the README, the User controller in `server/src/controllers/user.controller.ts`, and the User service in `server/src/services/user.service.ts`, to find at least one way of exposing passwords through the API. In the written part of your submission, include a cURL command that result in the User API returning passwords.
 
- 2. It’s quite embarrassing that these bugs exist despite the user service having 100% test coverage! Here's your chance to do test-driven development. **First**, modify the tests so that they actually fail (as they should!) on the current implementation. The User record’s random id and the username should never be exposed through REST API endpoints, and the tests should account for this requirement. **Second**, modify the user service so that it passes the new tests.
+ 2. It’s quite embarrassing that these bugs exist despite the user service having 100% test coverage! Here's your chance to do test-driven development. **First**, modify the tests so that they actually fail (as they should!) on the current implementation. The User record’s `userId` (a random id, not the username) and the `password` should never be exposed through REST API endpoints, and the tests should account for this requirement. **Second**, modify the user service so that it passes the new tests.
 
  3. In the written part of your submission, briefly explain why TypeScript allowed a SafeUserInfo-returning service function to include a password field despite SafeUserInfo having no password field.
 
  4. **Challenge**: there's another definite bug in the user service that's a little more difficult to find, but that could potentially represent a security issue. Identify the bug and include a cURL command that demonstrates it, explain why the cURL command demonstrates something bad happening, create a failing test, and fix the bug. (This is just worth 5% of the overall score for this assignment. Don't get stuck here and neglect the other tasks!)
+
+This task is worth 20 points: 5 points for each sub-part.
 
 ### Task 4: Creating an Auth model
 
@@ -219,14 +236,22 @@ To complete this part, you should:
 - Remove the `password` field from `UserRecord`, and instead
 - Maintain the property that whenever you have `storedUsers[id] === user`, then `storedAuth[user.username].user === id`.
 - Avoid having any functions in `user.service.ts` that loop over all elements in a JavaScript object in order to find one in particular.
-- Ensure that all tests still pass and that the tests still provide total coverage for the User service.
+- Ensure that all tests still pass and that the tests still provide total branch coverage for the User service (`user.service.ts`. You don't need to worry about coverage of other files.
+
+This task is worth 20 points, which will be assigned by manual grading:
+ - 5 points for correctly modifying the User and Auth records
+ - 5 points for correctly updating document comments and documenting new 
+ - 5 points for ensuring that the stored User records and stored Auth records stay in sync
+ - 5 points for ensuring that there are no functions that loop through all the usernames in order to find one in particular
 
 ### Task 5: Refactoring the Auth model
 
-The purpose of this part of the assignment is to get your fingers comfortable with the functionality that TypeScript provides, and comfortable with seeing “red squiggy” errors in VSCode and then fixing them. *(Again: if you use LLM or Copilot-powered autocompletion on this part, you are doing nothing but interfering with your own learning.)*
+The purpose of this part of the assignment is to get your fingers comfortable with the functionality that TypeScript provides, and comfortable with seeing “red squiggly” errors in VSCode and then fixing them. *(Again: if you use LLM or Copilot-powered autocompletion on this part, you are doing nothing but interfering with your own learning.)*
+
+**Suggestion:** if you haven't added and committed your code with Git yet, you should do so now. This task has you making a lot of changes, and it may be helpful to be able to quickly go back to the code before you started making changes.
 
 You now have two different types of code mixed up in `user.service.ts` — code primarily concerned with authentication, and code primarily concerned with the user’s personal data. In this part, your goal is to move the following elements from `user.service.ts` to a new file, `auth.service.ts`:
-- `storedAuth` (which should not be exported from `auth.service.ts`)
+- `storedAuths` (which should not be exported from `auth.service.ts`)
 - `resetStoredAuth()`
 - `getUserByUser()`
 - `checkAuth()`
@@ -244,8 +269,15 @@ You can add additional exported functions from `auth.service.ts` if needed — y
 
 Moving these functions will break a lot of other parts of the server, but using TypeScript, the linter, and your tests, it should not be too arduous to find what broke and fix it. 
 
-## 5. Grading
+This task is worth 15 points:
 
+ - 6 points for the all the functions ending up in their correct files as described above
+ - 5 points for tests passing and for `user.service.ts` and `auth.service.ts` still having 100% branch coverage (minus 1 point for each missing coverage-percentage, but no negative points, zero points if any tests fail or if TypeScript tests fail because of the refactor). Don't worry about coverage in any other files.
+ - 4 points for all functions having correct [code style]({{ site.baseurl }}{% link style.md %}) and documentation
+
+## 5. Grading Summary
+
+The assignment as a whole is worth 100 points.
 - Task 1: 25 points
 - Task 2: 20 points
 - Task 3: 20 points
