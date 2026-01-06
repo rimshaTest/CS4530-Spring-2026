@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Socket.IO Tutorial
-permalink: /tutorials/week3-socketio-basics
+permalink: /tutorials/week2-socketio-basics
 parent: Tutorials
 nav_order: 7
 ---
