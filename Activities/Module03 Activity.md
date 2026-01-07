@@ -6,7 +6,7 @@ nav_exclude: true
 
 ## Activity 3: Messing with APIs
 
-When you navigate to [this URL](https://name-seeing-server.onrender.com/) your browser makes an HTTP GET request that will get a JSON response. 
+When you navigate to [this URL](https://name-seeing-server.onrender.com/) your browser makes an HTTP GET request that will get a JSON response.
 
 That URL also accepts HTTP POST requests containing JSON data. The server at that URL also doesn’t correctly validate its input. Because you can [see the source code for this server](https://github.com/neu-se/name-seeing-server/blob/main/server.ts), the app is very easy to "attack."
 
@@ -16,6 +16,6 @@ You’ll hand in your assignment as a single TypeScript file `handin.ts` as requ
 
 ### Grading Criteria: 10pts
 
-* Task 1 cURL commands (5 points)
-* Task 2, 2 points
-* Tasks 3, 4, and 5: 1 point each.
+- Task 1 cURL commands (5 points)
+- Task 2, 2 points
+- Tasks 3, 4, and 5: 1 point each.
