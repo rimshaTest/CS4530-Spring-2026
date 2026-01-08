@@ -4,7 +4,7 @@ title: Messing With APIs
 nav_exclude: true
 ---
 
-## Activity 3: Messing with APIs
+## Activity 3.1: Messing with APIs
 
 When you navigate to [this URL](https://name-seeing-server.onrender.com/) your browser makes an HTTP GET request that will get a JSON response.
 
