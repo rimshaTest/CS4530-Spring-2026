@@ -27,6 +27,7 @@ This tutorial covers the basic concepts of React. By the end of this tutorial, y
   - [useEffect](#useeffect)
     - [Object Dependencies in useEffect](#object-dependencies-in-useeffect)
 
+
 ## Creating a New Vite + React App
 
 Let's use **npm** and **create vite** to create a new React project with TypeScript.
