@@ -11,7 +11,7 @@ nav_order: 8
 This tutorial covers the basic concepts of React. By the end of this tutorial, you will be able to create a new React app, understand the basic concepts of React such as states and props, understand React hooks for handling events.
 
 - [React Basics](#react-basics)
-- [Creating a new NextJs App](#creating-a-new-next-js-app)
+- [Creating a new Next.js App](#creating-a-new-next-js-app)
 - [Understanding a React App](#react-component)
   - [Components](#react-component)
   - [Template For Structure of Function Component](#template-for-structure-of-function-component)
@@ -27,18 +27,18 @@ This tutorial covers the basic concepts of React. By the end of this tutorial, y
   - [useEffect](#useeffect)
     - [Object Dependencies in useEffect](#object-dependencies-in-useeffect)
 
-## Creating a New Next Js App
+## Creating a New Next.js App
 
-Let's use **npx** and **create-next-app** to create a new Next.Js project.
+Let's use **npx** and **create-next-app** to create a new Next.js project.
 
 - **npx** stands for Node Package Execute (Part of the npm package since version 5.2). It is a runner that can execute any package that you want from the npm registry without even installing that package. In this case npx tool temporarily installs the create-next-app npm package and uses it to create our project.
 
 - Please check the following reference to the Next.Js boilerplate and getting started with framework
-  [Next.Js official documentation](https://nextjs.org/learn/react-foundations)
+  [Next.js official documentation](https://nextjs.org/learn/react-foundations)
 
 - Before beginning the installation, please ensure that your Node.js version is 18 or higher, as Next.js is only supported on these versions. Use `node --version` command to check.
 
-1. We use the create-next-app npx package to create an application that creates a fully-featured TS package.
+1. We use the create-next-app npx package to create an application that creates a fully-featured Typescript(TS) package.
 
    ```bash
    npx create-next-app my-app
@@ -47,7 +47,7 @@ Let's use **npx** and **create-next-app** to create a new Next.Js project.
    - Note 1: This will create a new project directory called my-app under the current directory.
    - Note 2: This will create a git repo in my-app, so you probably shouldn't do this inside a pre-existing git repository.
    - Note 3: Create the project with the following details after executing the command
-   - Note 4: It will ask you bunch of questions. Follow the image below to answer the questions.
+   - Note 4: It will ask you a bunch of questions. Follow the image below to answer the questions.
      ![image](./assets/week3-react/start-details.png)
 
 2. Navigate to the project directory using the command:
@@ -60,7 +60,7 @@ Let's use **npx** and **create-next-app** to create a new Next.Js project.
    npm run dev
    ```
 
-   - Note: Next.Js renders the content within the `app/page.tsx` file as the root component.
+   - Note: Next.js renders the content within the `app/page.tsx` file as the root component.
 
 4. Navigate to http://localhost:3000/ to see the default React page.
    - After a few seconds, a browser window opens, with our app running:
@@ -186,11 +186,11 @@ React components are similar to JavaScript functions and can accept arbitrary ar
 ```tsx
 import React from "react";
 
-interface IProps {
+interface Props {
   name?: string;
 }
 
-const Header = (props: IProps) => {
+const Header = (props: Props) => {
   return <h1>Hello, {props.name}</h1>;
 };
 
@@ -388,7 +388,7 @@ function Counter() {
 
 <a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/HandlingEvents.tsx" target="_blank">View in sandbox</a>
 
-- React implements its own system of handling events that is very similar to handling events on DOM elements. There are some syntax differences:
+- React implements its own system of handling events that is very similar to handling events in DOM elements. There are some syntax differences:
   - React events are named using camelCase, rather than lower case.
   - With JSX a function can be passed as an event handler instead of a string.
 
