@@ -10,23 +10,179 @@ submission_notes: Submit through Github Classroom (Commit your work in main bran
 
 Welcome back to the Game Nite team! In this second deliverable, you will be implementing new and exciting features to enhance the frontend interface and bring the web application to life. This assignment builds on the foundation you laid in the first project and will deepen your skills in frontend development with TypeScript and React.
 
-## Change Log
-- NA
-
-
-## Objectives of this assignment
-
 The objectives of this assignment are to:
 
 - Investigate and understand a large, existing codebase
-- Implement interaction-level design using:
-  - asynchronous programming constructs
-  - the React library
+- Implement interactive web applications with the React library
 - (Optional). Learn to comprehend and work with larger scope tests.
 
-## Getting started with this assignment
+## Changelog
+- NA
 
-Start by accepting our github classroom invitation. It will create a Github repository for you which will include the starter code for this assignment. Run `npm install` in the root directory to fetch all dependencies for the `client`, `server`, and `shared` folders. You should not install any additional dependencies: **'package.json' must be unchanged**. You should also not delete the **package-lock.json** file.
+
+## 1. Getting Started
+
+Start by accepting our [GitHub Classroom Invitation] TODO TODO XXX TODO. It will create a Github repository for you which will include the starter code for this assignment. Run `npm install` in the root directory to fetch all dependencies for the `client`, `server`, and `shared` folders. 
+
+### 1.1 Optional but Recommended: MongoDB
+
+It can be quite a bit easier to work on the application if restarting the server doesn't reset the entire application to an initial state. 
+
+This codebase has a proper repository layer, which connects to MongoDB through an adapter library called [Keyv] TODO TODO XXX TODO TUTORIAL. You can install MongoDB on your local machine.
+
+1. Follow the [instructions in the official MongoDB documentation](https://www.mongodb.com/docs/manual/administration/install-community/) to install the free community edition.
+2. Choose 'Install on Linux', 'Install on macOS', or 'Install on Windows', depending on your system. (the following steps are for Windows)
+3. Scroll down to the section labeled 'Install MongoDB Community Edition.' and click on [MongoDB Download Center](https://www.mongodb.com/try/download/community?tck=docs_server).
+4. For Windows, in the Package dropdown, select `msi`. Then download and run the installer.
+5. On Windows, select the _“Install MongoDB as a Service”_ checkbox and install. This will start MongoDB as a background service.
+6. Install "MongoDB Compass" if prompted.
+7. Verify if the MongoDB server is running using the Windows Services app.
+
+Mongo offers several methods of interacting with your Mongo databases.
+
+- MongoDB Compass is an interactive application for creating, modifying, and querying MongoDB connections. It should be started as part of the installation process, showing a connection to `mongodb://localhost:27017/`.
+
+  For Windows, install MongoDB Compass using the instructions above.
+
+  For Mac:
+
+  - Download the dmg file from https://www.mongodb.com/try/download/compass. Once the application starts:
+    1.  Click on "Add new connection" in the left sidebar.
+    2.  Make sure the URI field contains `mongodb://localhost:27017`
+    3.  Click on "Connect" - MongoDB will need to be running as a macOS service
+
+- Mongo shell (_mongosh_) provides a command-line interface that can be used to interact with databases in MongoDB.
+
+  For Windows:
+
+  - Download it [here](https://www.mongodb.com/try/download/shell) using the msi package. You can also use _mongosh_ to see if the MongoDB server is running. Try the MongoDB Community Edition and the command `show dbs`; you should see a list of existing databases in your local instance.
+
+  For Mac:
+
+  - Mongo shell is automatically installed with MongoDB through the Mac installation instructions. To use it, make sure MongoDB is running as a macOS service, then type `mongosh` into the terminal.
+
+### 1.2 Setting Up the Server To Use MongoDB
+
+Create a file called `server/.env` — the dot before the "env" is important! Include the following text:
+
+```
+MONGODB_STR=mongodb://127.0.0.1:27017
+```
+
+This tells your server how to connect to the local MongoDB instance that you got running in the previous step. Now, you can start the application as before: in one terminal, run:
+
+```
+ip2-me $> npm run dev -w=server
+```
+
+Leaving that running, open another terminal and run:
+
+```
+ip2-me $> npm run dev -w=client
+```
+
+## 2. Project Submission
+
+You will submit your code by pushing the final version into your repository (add/commit/push). In this assignment, you should only be making, committing, and pushing changes to the `main` branch of your repository. Be sure to check if the correct version is submitted before the deadline.
+
+On Gradescope, you will submit a plain `.txt` file containing two things:
+
+ 1. The link to your project's GitHub repo (e.g. `https://github.com/neu-cs4530/ip2-robsimmons`)
+ 2. The written responses and cURL commands requested in Task 3.
+
+We will grade your code on GitHub by using the "Feedback" PR that is automatically created when the assignment is. The Feedback PR can be found under the "Pull requests" menu, like this:
+
+![image]({{site.baseurl}}{% link /Assignments/ip1/github-pr.png %})
+
+If you don't see your Feedback PR for the assignment, let us know on Piazza (be sure include your GitHub username).
+
+Grades will be assigned on Gradescope and synced to the Canvas Gradebook.
+
+### TypeScript ESLint, Vitest, and Configuration Files
+
+The GitHub project contains a number of configuration files you **may not modify**: `package.json`, `package-lock.json`, `.prettierrc`, `tsconfig.json`, `vitest.config.mjs`, and `vite.config.mjs` are configuration files, as is everything in the `.github` directory. If you change any of these files, take care to change them back; the list of changes in the feedback PR should not show any changes to these files. You also may not include `eslint-disable` commands to disable ESLint's checks in your final submission.
+
+The code you submit must pass GitHub's automatic checks, which mostly just amount to the TypeScript typechecker, the ESLint linter, and the tests. You can run these yourself like this:
+
+```
+ip1-me $> npm run check --workspaces
+ip1-me $> npm run lint --workspaces
+ip1-me $> npm run test --workspaces
+```
+
+When you push your code to GitHub, you can see the status icon for your most recent submission. It's initially a yellow circle, like this:
+
+![image]({{site.baseurl}}{% link /Assignments/ip1/github-ci.png %})
+
+After the tests run, this will turn into a red ❌ or a green ✅. Clicking on the icon will let you see details of the tests we ran.
+
+The Actions tab on GitHub has the results of previous runs.
+
+![image]({{site.baseurl}}{% link /Assignments/ip1/ActionsTab.png %})
+
+**Up to 25% of your total grade on the assignment may be deducted for CI failures (5% for prettier failures, 10% for TypeScript failures, and 10% for ESLint failures). In severe cases we may decline to grade your assignment entirely. Give yourself sufficient time to find and fix any errors.** ESLint _warnings_ do not cause CI to fail will not automatically lead to a deduction, but it is bad practice to have lots of console statements in your code, and this can lead to a point deduction if it makes it hard for a TA to understand your code.
+
+## 3. Implementation Tasks
+
+### Task 1: Navigating to Other Profiles
+
+Currently, going to the "Profile" link at the top of your page takes you to the path `/profile/<yourusername>`. Change `client/src/components/MessageList.tsx` so that clicking on the users' display name in chat takes you to `/profile/<theirusername>`. For example, if you are logged in as `user0` and you see a chat message from Yāo, that should be a `<NavLink>` that takes you to `/profile/user1`. 
+
+This task is worth 10 points, based on checking that chat navigation works as expected.
+
+### Task 2: Viewing Other Profiles
+
+Change `client/src/pages/Profile.tsx` so that, you are logged in as `user0` and navigate to `/profile/user1`, you see a page that allows you to see _but not edit_ that user’s username, display name, and when their account was created.
+
+You may want to split this file into two or three new files, since the route to profile pages is now being used for two different purposes: viewing your own profile, and editing other profiles.
+
+This task is worth 25 points:
+ - 10 points will be based on functionality.
+ - 15 points will be based on appropriately refactoring your code into multiple files with appropriate [code style]({{ site.baseurl }}{% link style.md %}).
+
+### Task 3: More Profile Navigation
+
+The code you changed in Task 1 was only one place where user display names were referenced. Here are some others:
+
+ - The "(DisplayName) entered chat/left chat" messages in chat
+ - The "Player #2 is (DisplayName)" messages in the game panel
+ - "Posted by (DisplayName)" in forum messages
+ - "Reply by (DisplayName)" in forum comments
+ - "(Display name) created 1 day ago" on the home page and the game list and forum list pages
+
+For this task, you'll make three changes to all display name locations:
+
+ - Consistently refer to the current logged-in user by the second-person pronoun "you," instead of by their display name. (The exception is the "signed in as (DisplayName)" message in the header — leave that alone.)
+ - Create a consistent visual style for distinguishing references to "you," the current logged-in user, and references to other users.
+ - Consistently link other users' usernames to their profile. References to the current user should not link to their profile.
+
+This task is worth 15 points: one point for each of the three changes in each of the five places where display names occur. You should make this task easier on yourself by thinking about how to organizing your code in a way that minimizes duplication, and unnecessary duplication may lead to a deduction of up to 5 points.
+
+### Task 4: Mine Finder
+
+The backend has been implemented for Mine Finder, a game with a strong but legally-permissible resemblance to Microsoft's [Minesweeper](https://apps.microsoft.com/detail/9wzdncrfhwcn?hl=en-US&gl=US) game.
+
+In Mine Finder, your game starts with a 6x6 or 7x5 grid containing six randomly-placed mines. Clicking on a grid position sweeps it, revealing how many of the eight adjacent grid positions contain mines — or exploding and ending the game if there is a mine in that positions! When a grid position is revealed to have zero mines, all eight adjacent grid positions are automatically swept.
+
+The backend logic for Mine Finder 
+
+
+### Task 5: Marking Mines
+
+### Task 6: Mine Difficulty
+
+
+
+
+
+After you have done this, profile links will appear in chat messages. You can also 
+
+Your own messages 
+
+ use MongoDB as the NoSQL database to store data related to this application.
+
+
+You should not install any additional dependencies: **'package.json' must be unchanged**. You should also not delete the **package-lock.json** file.
 
 {: .note }
 **Note:** You may see warnings about vulnerabilities after running npm install. These should be ignored. Do NOT run `npm audit fix` or `npm audit fix --force` as this will change your package-lock.json file. 
