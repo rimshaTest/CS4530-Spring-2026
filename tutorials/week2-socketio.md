@@ -43,6 +43,7 @@ In practice, this means:
 - `.emit(event, data)` triggers that event and passes data to all listeners
 
 Under the hood, Socket.IO uses WebSockets (with fallbacks) to maintain a persistent connection.
+If this feels familiar, it’s because Socket.IO follows the same idea as the observer/listener pattern, which we’ll revisit later in the course.
 
 ## Socket.IO vs. REST APIs
 
@@ -63,6 +64,19 @@ Socket.IO is great for any use case where real-time updates are essential, or wh
 2. **Multiplayer Games** – Real-time game state sharing with low latency is essential for smooth multiplayer gameplay. By emitting socket events with the updated game state, you can ensure that all connected player clients have the same synchronized copy of the game state to display.
 
 3. **Collaborative Tools** – For applications like collaborative text editors or whiteboards, sockets can help keep the state synchronized across clients. When a user makes a change, the change will be emitted to the server, which may internally update the "source of truth" for the application. Then, the updated state would be emitted to all other connected clients, so that everyone sees the edits in real time.
+
+### Client vs Server: who does what?
+
+In a Socket.IO application, the client and server have different responsibilities.
+
+- The **client** emits events when a user does something, such as clicking a button, submitting a form, or typing a message.
+- The **server** listens for those events, decides what should happen next, and chooses what information to send back and to which clients.
+
+For example, in a chat app:
+- The client emits a `chat message` event when a user sends a message
+- The server receives it and broadcasts the message to other connected clients
+
+Keeping this separation clear will matter more as we introduce rooms, namespaces, and multiple connected users.
 
 # Using Socket.IO
 
@@ -273,6 +287,17 @@ io.on("connection", (socket) => {
   socket.emit("chat message", { user: "John", message: "Hello, World!" });
 </script>
 ```
+## Common Mistakes
+
+- **Static files not being served**  
+  Make sure your Express server is serving `index.html`. If the browser loads but the socket never connects, this is often the issue.
+
+- **Mismatched Socket.IO versions**  
+  The Socket.IO client and server must use compatible versions. Always install dependencies using the provided `package.json`.
+
+- **Using `io.emit` vs `socket.emit` incorrectly**  
+  - `socket.emit(...)` sends a message to a single connected client  
+  - `io.emit(...)` broadcasts a message to all connected clients
 
 ## Troubleshooting
 - **`ReferenceError: __dirname is not defined`** — You’re in ESM. Use the `fileURLToPath(import.meta.url)` pattern shown above.
