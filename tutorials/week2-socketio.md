@@ -10,6 +10,7 @@ This tutorial covers the basic concepts of Socket.IO. By the end, you'll underst
 
 ## Contents
 - [What is Socket.IO](#what-is-socketio)
+  - [What problem does Socket.IO solve?](#what-problem-does-socketio-solve)
   - [How Does It Work?](#how-does-it-work)
   - [Socket.IO vs. REST APIs](#socketio-vs-rest-apis)
   - [Example Uses](#example-uses)
@@ -31,10 +32,15 @@ Socket.IO keeps a persistent connection open between the client and the server. 
 This is what makes real-time features possible, like live chat messages, shared cursors in a collaborative editor, multiplayer game updates, or dashboards that update instantly when new data arrives.
 
 ## How Does It Work?
-Socket.IO follows the observer/listener pattern:
+Socket.IO uses a listener-based event model.
 
-- **Publisher** — where `.emit(...)` is called; it sends data on a channel (event name).
-- **Subscriber** — where `.on(...)` is used; it listens for events and runs a handler.
+When you call `.on(...)`, you are **registering a listener** for a specific event. That listener will run every time the event occurs.
+
+When you call `.emit(...)`, you are **sending an event** with some data. Any listeners registered for that event will be notified and receive the data.
+
+In practice, this means:
+- `.on(event, handler)` sets up code that waits for something to happen
+- `.emit(event, data)` triggers that event and passes data to all listeners
 
 Under the hood, Socket.IO uses WebSockets (with fallbacks) to maintain a persistent connection.
 
