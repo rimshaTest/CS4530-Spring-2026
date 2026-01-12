@@ -81,6 +81,8 @@ Leaving that running, open another terminal and run:
 ip2-me $> npm run dev -w=client
 ```
 
+The application should work as before, but any changes you make in the application should survive restarting the server.
+
 ## 2. Recommendations When Working on the Project
 
 1. Have the frontend and backend running, and have the project open in your browser, while you are working. It's very useful to have the website update as you make changes.  
@@ -90,7 +92,7 @@ ip2-me $> npm run dev -w=client
 5. Frequently add and commit changes with git. This saves your changes and makes it easy to go back to a state where most tasks were complete. 
 6. Task 6 is more challenging than the other tasks, but is only worth 20% of credit. Don't 
 
-## 2. Project Submission
+## 3. Project Submission
 
 You will submit your code by pushing the final version into your repository (add/commit/push).**All commits must be visible on the main branch on GitHub classroom to receive credit.** Be sure to check if the correct version is submitted before the deadline.
 
@@ -131,7 +133,7 @@ The Actions tab on GitHub has the results of previous runs.
 
 **Up to 25% of your total grade on the assignment may be deducted for CI failures (5% for prettier failures, 10% for TypeScript failures, and 10% for ESLint failures). In severe cases we may decline to grade your assignment entirely. Give yourself sufficient time to find and fix any errors.** ESLint _warnings_ do not cause CI to fail will not automatically lead to a deduction, but it is bad practice to have lots of console statements in your code, and this can lead to a point deduction if it makes it hard for a TA to understand your code.
 
-## 3. Implementation Tasks
+## 4. Implementation Tasks
 
 ### Task 1: Navigating to Other Profiles
 
@@ -257,3 +259,13 @@ This task is worth 20 points:
 - 4 points for implementing easy mode
 - 4 points for fixing the tests and having >=95% line and branch coverage for `shared/src/games/minefinder.ts`
 - 4 points for [code style]({{ site.baseurl }}{% link style.md %}) and appropriate documentation of helper functions.
+
+## 5. Grading Summary
+
+The assignment as a whole is worth 100 points.
+- Task 1: 10 points
+- Task 2: 25 points
+- Task 3: 15 points
+- Task 4: 22 points
+- Task 5: 8 points
+- Task 6: 20 points
