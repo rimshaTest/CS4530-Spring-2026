@@ -213,7 +213,7 @@ GameNite's user researchers come to you with two different user stories they dis
 
 > As an expert mine finder, I want access to more challenging puzzles, so that I can show off my advanced logical skills.
 
-In this task, you'll meet the needs of these users by modifying the Mine Finder game to allow for an initial difficulty selection. This task will limited changes to all the parts of your project: the server, the client, and the shared code.
+In this task, you'll meet the needs of these users by modifying the Mine Finder game to allow for an initial difficulty selection. This task will require changes to all the parts of your project: the server, the client, and the shared code.
 
 When a new single-player game of Mine Finder begins, the user should be shown a drop down menu with three choices, "Easy", "Standard", and "Hard", and the "Standard" button should be selected by default. There should be a submit button that sends a move that is just the string "easy", "standard", or "hard". Sending that move should trigger the backend's Mine Finder logic to generate a board and start a game.
 
