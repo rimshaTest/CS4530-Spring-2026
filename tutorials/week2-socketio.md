@@ -24,6 +24,12 @@ This tutorial covers the basic concepts of Socket.IO. By the end, you'll underst
 # What is Socket.IO?
 Socket.IO is a library that enables real‑time, bidirectional, persistent communication between client(s) and server(s). **Bidirectional** means both the client and server can send messages at any time. These features make Socket.IO ideal for live dashboards, chats, multiplayer games, and collaborative tools.
 
+## What problem does Socket.IO solve?
+
+With normal HTTP, communication is request–response. The client asks the server for data, the server responds, and the connection closes. If something changes on the server, the client won’t know unless it asks again.
+Socket.IO keeps a persistent connection open between the client and the server. This lets the server push updates to the client the moment something changes, without waiting for a new request.
+This is what makes real-time features possible, like live chat messages, shared cursors in a collaborative editor, multiplayer game updates, or dashboards that update instantly when new data arrives.
+
 ## How Does It Work?
 Socket.IO follows the observer/listener pattern:
 
