@@ -24,11 +24,11 @@ The objectives of this assignment are to:
 
 Start by accepting our [GitHub Classroom Invitation] TODO TODO XXX TODO. It will create a Github repository for you which will include the starter code for this assignment. Run `npm install` in the root directory to fetch all dependencies for the `client`, `server`, and `shared` folders.
 
-### 1.1 Optional but Recommended: MongoDB
+### 1.1 Optional but Highly Recommended: MongoDB
 
 It can be quite a bit easier to work on the application if restarting the server doesn't reset the entire application to an initial state.
 
-This codebase has a proper repository layer, which connects to MongoDB through an adapter library called [Keyv] TODO TODO XXX TODO TUTORIAL. You can install MongoDB on your local machine.
+Your starter code uses a proper repository layer, which connects to MongoDB through an adapter library called [Keyv] TODO TODO XXX TODO TUTORIAL. You can install MongoDB on your local machine.
 
 1. Follow the [instructions in the official MongoDB documentation](https://www.mongodb.com/docs/manual/administration/install-community/) to install the free community edition.
 2. Choose 'Install on Linux', 'Install on macOS', or 'Install on Windows', depending on your system. (the following steps are for Windows)
